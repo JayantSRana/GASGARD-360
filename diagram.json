@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Jayant Singh Rana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 48, "left": -100.76, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -45.3, "left": -89, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 281.54,
+      "left": -95.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 25.2,
+      "left": -178.6,
+      "attrs": { "color": "purple" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 136.8,
+      "left": -267,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 102.4,
+      "left": 44,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 275,
+      "left": -230.4,
+      "attrs": { "color": "yellow", "xray": "" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "gas1:GND", "esp:GND.2", "black", [ "h9.6", "v85.6" ] ],
+    [ "gas1:VCC", "esp:5V", "red", [ "h19.2", "v27.9", "h-192", "v220.8" ] ],
+    [ "gas1:AOUT", "esp:34", "blue", [ "h19.2", "v-38.4", "h-182.4", "v182.4" ] ],
+    [ "esp:GND.1", "oled1:GND", "black", [ "h-19.05", "v76.8", "h57.6" ] ],
+    [ "esp:3V3", "oled1:VCC", "red", [ "h-38.25", "v192", "h86.25" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-19.2", "v-57.6" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h-19.2", "v240.1", "h-172.8", "v-144" ] ],
+    [ "lcd1:SDA", "esp:21", "limegreen", [ "h-38.4", "v-28.6" ] ],
+    [ "lcd1:SCL", "esp:22", "limegreen", [ "h-38.4", "v-66.9" ] ],
+    [ "led1:A", "esp:25", "purple", [ "v38.4" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:26", "bz1:2", "red", [ "h-95.85", "v76.8" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v9.6", "h76.8", "v-28.8" ] ],
+    [ "btn1:2.r", "esp:GND.1", "black", [ "h9.8", "v-105.4" ] ],
+    [ "btn1:1.r", "esp:27", "yellow", [ "v-28.8", "h-19", "v-9.6" ] ],
+    [ "oled1:SCL", "esp:22", "cyan", [ "v-9.6", "h48.3", "v-182.4" ] ],
+    [ "oled1:SDA", "esp:21", "cyan", [ "v-9.6", "h38.47", "v-153.6" ] ]
+  ],
+  "dependencies": {}
+}
