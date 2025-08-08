@@ -1,4 +1,4 @@
-🛡️ ESP32-Based Air Quality Monitor with MQ2 Sensor
+🛡️ GASGARD 360
 A powerful, real-time air quality monitoring system using an ESP32, MQ2 gas sensor, buzzer, LED, OLED, and I2C LCD display. This project visually and audibly alerts users about changing gas concentration levels and allows for system reset via a button. Ideal for learning embedded systems, sensor integration, and data visualization.
 
 📦 Features
